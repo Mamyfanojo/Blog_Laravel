@@ -24,5 +24,7 @@ class AdminController extends Controller
     public function addpost() {
         return view('admin.post.addpost');
     }
-    
+    public function editpost() {
+        return view('admin.post.addpost');
+    }
 }
