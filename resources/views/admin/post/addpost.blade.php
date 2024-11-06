@@ -35,7 +35,7 @@
                 @csrf
                 <div class="form-group">
                   <label for="title">Title</label>
-                  <input type="text" name="title" class="form-control" value="{{ old('title', $post->title) }}">
+                  <input type="text" name="title" class="form-control" value="{{ old('title') }}">
                 </div>
                 <div class="form-group">
                   <label for="title">Category</label>
@@ -43,7 +43,7 @@
                   <select class="form-control" id="category" name="category_id">
                     <option value="">Selectionner une categorie</option>
                     @foreach ($categories as $category)
-                    <option value=" {{ $category->id }} ">{{ $category->name }}</option>
+                    <option value="{{$category->id}}">{{ $category->name }}</option>
                     @endforeach
                   </select>
 
@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                   <label for="body">Body</label>
-                  <textarea name="body" class="form-control"> {{ old('body', $post->body) }} </textarea>
+                  <textarea name="body" class="form-control"> {{ old('body') }} </textarea>
                   @error('body')
                     {{ $message }}
                   @enderror
@@ -76,3 +76,5 @@
 
 
 @endsection
+
+<!-- NOVAINA FARANY -->
