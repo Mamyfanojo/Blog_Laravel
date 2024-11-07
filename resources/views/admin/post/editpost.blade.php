@@ -48,9 +48,9 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <!-- <label for="file">Image Upload</label>
+                  <label for="file">Image Upload</label>
                   <input type="file" class="form-control-file">
-                  <small class="form-text text-muted">Max size 3 mb</small> -->
+                  <small class="form-text text-muted">Max size 3 mb</small>
                 </div>
                 <div class="form-group">
                   <label for="body">Body</label>
