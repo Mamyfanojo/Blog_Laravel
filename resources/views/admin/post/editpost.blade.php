@@ -31,7 +31,7 @@
               <h4>Edit post</h4>
             </div>
             <div class="card-body">
-              <form action=" {{ route('admin.post.update', $post) }} " method="post">
+              <form action=" {{ route('admin.post.update', $post) }} " method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <div class="form-group">
@@ -47,11 +47,13 @@
                     @endforeach
                   </select>
                 </div>
+
                 <div class="form-group">
                   <label for="file">Image Upload</label>
-                  <input type="file" class="form-control-file">
+                  <input  type="file" name="image" class="form-control-file">
                   <small class="form-text text-muted">Max size 3 mb</small>
                 </div>
+
                 <div class="form-group">
                   <label for="body">Body</label>
                   <textarea name="body" class="form-control"> {{ $post->body }} </textarea>
@@ -68,6 +70,4 @@
       </div>
     </div>
   </section>
-
-
 @endsection

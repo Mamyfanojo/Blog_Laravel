@@ -49,7 +49,7 @@
             <table class="table table-striped">
               <thead class="thead-inverse">
                 <tr>
-                  <th>Id</th>
+                  <th>Image</th>
                   <th>Title</th>
                   <th>Category</th>
                   <th>Date creation</th>
@@ -60,12 +60,18 @@
               </thead>
               <tbody>
                 @foreach ($posts as $post )
-                  <tr>
-                    <td scope="row"> {{ $post->id }} </td>
+                  <tr>@if ($post->image)
+                      <td>
+                        <img width="50px" height="50px" src="{{ $post->imageUrl() }}" alt="">
+                      </td>
+                    @endif
                     <td> {{ $post->title }} </td>
                     <td> {{ $post->category?->name }} </td>
                     <td> {{ $post->created_at }} </td>
                     <td> {{ $post->body }} </td>
+
+                    
+
                     <td style="display: flex;  ">
                     <a style=" margin-right: 10px; " href=" {{ route('admin.post.edit', [$post]) }} " class="btn btn-outline-secondary">
                       Modifier 
