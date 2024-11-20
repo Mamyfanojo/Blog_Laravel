@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\CategoryRequest;
+use App\Http\Requests\admin\SearchCategoryController;
 use App\Models\admin\Category;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,15 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(SearchCategoryController $request)
     {
+        $query = Category::query();
+        if($request->validated('name')) {
+            $query = $query->where('name', 'like', "%{$request->validated('name')}%");
+        }
         return view('admin.category.categories', [
-            'categories' => Category::orderBy('created_at', 'desc')->paginate(6)
+            'categories' => $query->orderBy('created_at', 'desc')->paginate(6),
+            'input' => $request->validated()
         ]);
     }
 

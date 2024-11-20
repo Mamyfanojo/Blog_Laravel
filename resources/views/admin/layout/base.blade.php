@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col">
         <p class="lead text-center">
-          Copyright &copy; 2018 Blogen
+          Copyright &copy; 2024 BlogeLaravel
         </p>
       </div>
     </div>

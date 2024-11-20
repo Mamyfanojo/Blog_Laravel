@@ -78,7 +78,7 @@ class PostController extends Controller
         //  dd($image);
 
         if ($image == null || $image->getError()) {
-            dd($image);
+            // dd($image);
             return $data;
         }
         if($post->image) {

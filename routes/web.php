@@ -20,10 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/dashboard', [AdminController::class, 'index']);
-Route::get('/admin/posts', [AdminController::class, 'post']);
-Route::get('/admin/addpost', [AdminController::class, 'addpost']);
-
 Route::prefix('admin')->name('admin.')->group(function() {
     Route::resource('category', CategoryController::class )->except('show');
     Route::resource('post', PostController::class )->except('show');

@@ -17,10 +17,17 @@
         </div>
         <div class="col-md-6 ml-auto">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="search">
-            <span class="input-group-btn">
-              <button class="btn btn-success">Search </button>
-            </span>
+
+            <form action="" class="d-flex">
+
+              <input type="text" name="name" value="{{ $input['name'] ?? '' }}" class="form-control" placeholder="search">
+              <span class="input-group-btn">
+                <button class="btn btn-success">Search </button>
+              </span>
+
+            </form>
+            
+
           </div>
         </div>
       </div>

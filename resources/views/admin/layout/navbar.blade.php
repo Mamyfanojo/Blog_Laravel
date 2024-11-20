@@ -14,7 +14,7 @@
             <a href=" {{ url("admin/posts") }} " class="nav-link">Posts</a>
           </li>
           <li class="nav-item">
-            <a href="{{ url("admin/categories") }} " class="nav-link">Categories</a>
+            <a href="{{route('admin.category.index') }} " class="nav-link">Categories</a>
           </li>
           <li class="nav-item">
             <a href="users.html" class="nav-link">Users</a>
